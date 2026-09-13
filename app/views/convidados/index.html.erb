@@ -1,0 +1,26 @@
+<div class="pagina-fundo fundo-index">
+  <div class="container" style="max-width: 900px; width: 100%;">
+    <% if notice %>
+      <div class="mensagem-sucesso"><%= notice %></div>
+    <% end %>
+
+    <h1 class="titulo-principal">Lista de Convidados</h1>
+
+    <div style="margin-top: 2rem;">
+      <% @convidados.each do |convidado| %>
+        <div class="convidado-card">
+          <p><strong>Nome:</strong> <%= convidado.nome %></p>
+          <p><strong>Grupo:</strong> <%= convidado.grupo %></p>
+          <p><strong>Drink especial:</strong> <%= convidado.drink_especial ? "Sim" : "Não" %></p>
+          <div style="margin-top: 1rem;">
+            <%= link_to "Ver detalhes", convidado, class: "botao", style: "padding: 8px 20px; font-size: 0.9rem;" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <%= link_to "➕ Novo Convidado", new_convidado_path, class: "botao botao-grande" %>
+    </div>
+  </div>
+</div>

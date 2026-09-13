@@ -1,0 +1,59 @@
+<%= form_with(model: convidado) do |form| %>
+  <% if convidado.errors.any? %>
+    <div class="mensagem-erro">
+      <h3><%= pluralize(convidado.errors.count, "erro") %> impediram o cadastro:</h3>
+      <ul>
+        <% convidado.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="campo">
+    <%= form.label :nome, "Seu nome:" %>
+    <%= form.text_field :nome, required: true, placeholder: "Digite seu nome completo" %>
+  </div>
+
+  <div class="campo">
+    <label>Você é:</label>
+    <div class="opcoes">
+      <label>
+        <%= form.radio_button :surfista, false %>
+        🏍️ Motoqueiro
+      </label>
+      <label>
+        <%= form.radio_button :surfista, true %>
+        🏄 Surfista
+      </label>
+    </div>
+  </div>
+
+  <div class="campo">
+    <label>O que vai levar? (opcional)</label>
+    <div class="opcoes">
+      <label>
+        <%= form.check_box :leva_bebida %>
+        🥤 Vou levar bebida
+      </label>
+      <label>
+        <%= form.check_box :leva_comida %>
+        🍕 Vou levar comida
+      </label>
+    </div>
+  </div>
+
+  <div class="campo">
+    <%= form.label :descricao, "Descrição (qual bebida ou comida?):" %>
+    <%= form.text_area :descricao, rows: 4, placeholder: "Ex: Vou levar 2 refrigerantes de guaraná" %>
+  </div>
+
+  <div class="campo">
+    <%= form.label :drink_especial, "Participar do drink especial (R$ 10)?" %>
+    <%= form.select :drink_especial, [["Sim", true], ["Não", false]], prompt: "Escolha uma opção" %>
+  </div>
+
+  <div style="text-align: center; margin-top: 2rem;">
+    <%= form.submit "Confirmar Presença", class: "botao botao-grande" %>
+  </div>
+<% end %>

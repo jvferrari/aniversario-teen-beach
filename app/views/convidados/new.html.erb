@@ -1,0 +1,26 @@
+<div class="pagina-fundo fundo-new">
+  <div class="card">
+    <h1 class="titulo-principal" style="font-size: 3rem; text-align: center; margin-bottom: 2rem;">
+      Confirmar Presença
+    </h1>
+    <%= render "form", convidado: @convidado %>
+
+    <div class="info-evento">
+      <h3>📍 Informações do Evento</h3>
+      <p>
+        <strong>Local:</strong> Minha casa
+        <span class="endereco">
+          Ponto de Referência: Casa da Ração<br>
+          Avenida das Garças (4ª Etapa), 387 — Quadra 20, Bloco D
+        </span>
+      </p>
+      <p>
+        <strong>Horário:</strong> das 16:00 às 22:00
+      </p>
+    </div>
+  </div>
+
+  <div style="margin-top: 2rem; text-align: center;">
+    <%= link_to "LISTA DE CONVIDADOS", convidados_path, class: "botao" %>
+  </div>
+</div>

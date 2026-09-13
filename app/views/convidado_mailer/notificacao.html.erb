@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <body style="font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px;">
+    <div style="max-width: 600px; margin: 0 auto; background: white; padding: 20px; border-radius: 10px;">
+      <h1 style="color: #0077cc;">🎉 Novo Convidado Confirmado!</h1>
+      <p><strong>Nome:</strong> <%= @convidado.nome %></p>
+      <p><strong>Grupo:</strong> <%= @convidado.grupo %></p>
+      <p><strong>Vai levar bebida?</strong> <%= @convidado.leva_bebida ? "Sim" : "Não" %></p>
+      <p><strong>Vai levar comida?</strong> <%= @convidado.leva_comida ? "Sim" : "Não" %></p>
+      <p><strong>Descrição:</strong> <%= @convidado.descricao.presence || "Não informado" %></p>
+      <p><strong>Drink especial (R$ 10):</strong> <%= @convidado.drink_especial ? "Sim" : "Não" %></p>
+    </div>
+  </body>
+</html>

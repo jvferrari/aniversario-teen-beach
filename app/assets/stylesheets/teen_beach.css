@@ -1,0 +1,418 @@
+/* ============================================
+   TEEN BEACH MOVIE - Estilos Temáticos
+   ============================================ */
+
+/* ===== FONTES E RESET ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+/* Container de fundo — cada página usa uma imagem diferente */
+.pagina-fundo {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Variações por página */
+.fundo-home  { background-image: url('home-bg.jpg'); }
+.fundo-new   { background-image: url('new-bg.jpg'); }
+.fundo-index { background-image: url('index-bg.jpg'); }
+
+/* ===== TÍTULOS ===== */
+.titulo-principal {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem;
+  letter-spacing: 2px;
+  color: #003366;
+  text-shadow: 3px 3px 0 #FFD700, 6px 6px 15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.subtitulo {
+  font-family: 'Pacifico', cursive;
+  font-size: 1.8rem;
+  color: #0077cc;
+  text-shadow: 2px 2px 0 white;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ===== CARD CENTRAL (formulários, listas) ===== */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  border: 4px solid #FFD700;
+}
+
+.card-largo {
+  max-width: 900px;
+}
+
+/* ===== CAMPOS DE FORMULÁRIO ===== */
+.campo {
+  margin-bottom: 1.5rem;
+}
+
+.campo label {
+  display: block;
+  font-weight: 600;
+  color: #003366;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.campo input[type="text"],
+.campo textarea,
+.campo select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #87CEEB;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.campo input[type="text"]:focus,
+.campo textarea:focus,
+.campo select:focus {
+  outline: none;
+  border-color: #0077cc;
+  box-shadow: 0 0 0 4px rgba(0, 119, 204, 0.15);
+}
+
+.campo textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* ===== RADIO E CHECKBOX ===== */
+.opcoes {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.opcoes label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 2px solid #87CEEB;
+  transition: all 0.3s;
+}
+
+.opcoes label:hover {
+  background: #e6f4ff;
+  border-color: #0077cc;
+}
+
+.opcoes input[type="radio"],
+.opcoes input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #0077cc;
+  cursor: pointer;
+}
+
+/* ===== BOTÕES ===== */
+.botao {
+  display: inline-block;
+  padding: 14px 40px;
+  background: linear-gradient(135deg, #0077cc, #005fa3);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 6px 15px rgba(0, 119, 204, 0.4);
+}
+
+.botao:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 119, 204, 0.6);
+}
+
+.botao-grande {
+  font-size: 1.4rem;
+  padding: 20px 60px;
+}
+
+/* ===== MENSAGENS ===== */
+.mensagem-sucesso {
+  background: #d4edda;
+  color: #155724;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 5px solid #28a745;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.mensagem-erro {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 5px solid #dc3545;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== LISTA DE CONVIDADOS ===== */
+.convidado-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  border-left: 6px solid #FFD700;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.convidado-card:hover {
+  transform: translateX(5px);
+}
+
+.convidado-card p {
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+/* ===== HOME ===== */
+.hero {
+  text-align: center;
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: 3rem auto;
+
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* ============================================
+   RESPONSIVIDADE — TABLET (até 768px)
+   ============================================ */
+@media (max-width: 768px) {
+  .titulo-principal {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+  }
+
+  .subtitulo {
+    font-size: 1.4rem;
+  }
+
+  .hero, .card {
+    padding: 2rem 1.5rem;
+    margin: 1.5rem auto;
+    border-radius: 15px;
+  }
+
+  .hero {
+    margin: 2rem 1rem;
+  }
+
+  .botao {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+
+  .botao-grande {
+    font-size: 1.2rem;
+    padding: 16px 40px;
+  }
+
+  .convidado-card {
+    padding: 1.2rem;
+  }
+}
+
+/* ============================================
+   RESPONSIVIDADE — CELULAR (até 480px)
+   ============================================ */
+@media (max-width: 480px) {
+  .pagina-fundo {
+    padding: 1rem 0.5rem;
+  }
+
+  .titulo-principal {
+    font-size: 1.8rem;
+    letter-spacing: 0px;
+    text-shadow: 2px 2px 0 #FFD700, 4px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .subtitulo {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero {
+    padding: 1.5rem 1rem;
+    margin: 1rem 0.5rem;
+    border-radius: 15px;
+  }
+
+  .card {
+    padding: 1.5rem 1rem;
+    margin: 1rem 0;
+    border-radius: 15px;
+    border-width: 3px;
+  }
+
+  .card-largo {
+    max-width: 100%;
+  }
+
+  /* Campos do formulário mais compactos */
+  .campo {
+    margin-bottom: 1rem;
+  }
+
+  .campo input[type="text"],
+  .campo textarea,
+  .campo select {
+    padding: 10px 12px;
+    font-size: 16px; /* ← importante: 16px evita zoom automático no iOS! */
+  }
+
+  /* Opções lado a lado viram coluna única */
+  .opcoes {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .opcoes label {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  /* Botões ocupam largura total para facilitar toque */
+  .botao {
+    width: 100%;
+    text-align: center;
+    padding: 14px 20px;
+  }
+
+  .botao-grande {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 1.1rem;
+  }
+
+  /* Mensagens mais compactas */
+  .mensagem-sucesso,
+  .mensagem-erro {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+
+  /* Cards de convidados mais compactos */
+  .convidado-card {
+    padding: 1rem;
+    border-left-width: 4px;
+  }
+
+  /* Botão "Ver detalhes" ocupa largura total no mobile */
+  .convidado-card .botao {
+    width: 100%;
+  }
+    .info-evento {
+    padding: 1rem;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .info-evento h3 {
+    font-size: 1.2rem;
+  }
+
+  .info-evento .endereco {
+    padding-left: 0.7rem;
+  }
+}
+/* ===== INFORMAÇÕES DO EVENTO ===== */
+.info-evento {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 215, 0, 0.15);
+  border-left: 5px solid #FFD700;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.info-evento h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  color: #003366;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.info-evento p {
+  margin-bottom: 0.8rem;
+  color: #1a1a1a;
+}
+
+.info-evento strong {
+  color: #0077cc;
+  font-weight: 700;
+}
+
+.info-evento .endereco {
+  display: block;
+  color: #555;
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  padding-left: 1rem;
+  border-left: 3px solid #87CEEB;
+}
+.logo-festa {
+  max-width: 90%;
+  width: 600px;
+  height: auto;
+  margin: 0 auto 1.5rem auto;
+  display: block;
+  filter: drop-shadow(3px 5px 8px rgba(0, 0, 0, 0.3));
+  margin-top: 5rem;
+}
+
+/* Ajuste para o botão descer um pouco mais */
+.hero .botao-grande {
+  margin-top: 5rem;
+}

@@ -1,0 +1,23 @@
+<div class="pagina-fundo fundo-index">
+  <div class="card" style="max-width: 700px; width: 100%;">
+    <% if notice %>
+      <div class="mensagem-sucesso"><%= notice %></div>
+    <% end %>
+
+    <h1 class="titulo-principal" style="font-size: 2.5rem;">Confirmação de Presença</h1>
+
+    <div style="margin-top: 1.5rem;">
+      <p><strong>Nome:</strong> <%= @convidado.nome %></p>
+      <p><strong>Grupo:</strong> <%= @convidado.grupo %></p>
+      <p><strong>Vai levar bebida?</strong> <%= @convidado.leva_bebida ? "Sim" : "Não" %></p>
+      <p><strong>Vai levar comida?</strong> <%= @convidado.leva_comida ? "Sim" : "Não" %></p>
+      <p><strong>Descrição:</strong> <%= @convidado.descricao.presence || "Não informado" %></p>
+      <p><strong>Drink especial (R$ 10):</strong> <%= @convidado.drink_especial ? "Sim" : "Não" %></p>
+    </div>
+
+    <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+      <%= link_to "Editar", edit_convidado_path(@convidado), class: "botao" %>
+      <%= link_to "LISTA DE CONVIDADOS", convidados_path, class: "botao" %>
+    </div>
+  </div>
+</div>
