@@ -66,4 +66,4 @@ group :test do
 end
 
 gem 'dotenv-rails', groups: [:development, :test]
-gem "json", "~> 2.7"
+gem "json", "~> 3.0"
